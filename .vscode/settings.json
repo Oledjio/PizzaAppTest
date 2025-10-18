@@ -1,0 +1,19 @@
+{
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.addMissingImports": "explicit",
+        "source.sortMembers": "explicit"
+    },
+    "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "markdown"],
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "externalTemplate": true,
+            "style": "scss",
+            "selectorPrefix": "app"
+        },
+        "angular-component": {
+            "skipDisplayBlock": true
+        }
+    }
+}
