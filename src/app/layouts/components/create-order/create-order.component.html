@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="text-wrapper">
+        <h2 class="header">
+            Хватит думать!
+            <span class="header-text"> Доставим заказ за 30 минут!</span>
+        </h2>
+
+        <p class="text">
+            Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы опоздаем даже на 1
+            минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим сервисом
+            и сделаем всё, чтобы наш клиент был доволен и не остался голодный!
+        </p>
+    </div>
+
+    @if (form) {
+        <form class="form" [formGroup]="form">
+            <input
+                class="input"
+                placeholder="Ваше имя"
+                type="text"
+                formControlName="name"
+                (keydown)="blockDot($event)"
+            />
+
+            <input
+                class="input"
+                placeholder="Адрес доставки"
+                type="text"
+                formControlName="address"
+                (keydown)="blockDot($event)"
+            />
+
+            <input
+                class="input"
+                placeholder="Телефон"
+                type="tel"
+                formControlName="phone"
+                (keydown)="blockDot($event)"
+            />
+
+            <button class="primary-button">Оформить заказ</button>
+        </form>
+    }
+</div>
+

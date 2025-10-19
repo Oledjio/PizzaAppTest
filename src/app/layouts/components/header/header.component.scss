@@ -1,0 +1,48 @@
+.header {
+    box-shadow: var(--primary-box-shadow);
+    background-color: var(--white-color);
+    position: sticky;
+    top: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .logo {
+        width: 68px;
+        height: 68px;
+    }
+
+    .logo-text {
+        width: 50px;
+        color: var(--primary-color);
+    }
+}
+
+.menu {
+    display: flex;
+    gap: 48px;
+
+    .menu-link {
+        color: var(--brown-600);
+        transition: color 0.3s;
+
+        &:hover {
+            color: var(--primary-color);
+        }
+
+        &.active {
+            border-bottom: 1px solid var(--brown-600);
+        }
+    }
+}
+

@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    background-image: url('../../../../assets/images/pizzzzza.png');
+    background-repeat: no-repeat;
+    background-position: 100% 70%;
+    padding: 240px 0 100px 0;
+    background-size: 30%;
+
+    .text-wrapper {
+        flex: 0 1 26%;
+    }
+
+    .form {
+        flex: 0 1 30%;
+        align-self: flex-end;
+    }
+}
+
+.header {
+    color: var(--primary-color);
+    font-size: 35px;
+    margin-bottom: 80px;
+}
+
+.header-text,
+.text {
+    color: var(--brown-500);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    .input {
+        border: 1px solid var(--brown-400);
+        padding: 24px;
+
+        &::placeholder {
+            color: var(--brown-300);
+            font-size: 16px;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: var(--primary-box-shadow);
+        }
+    }
+}
+

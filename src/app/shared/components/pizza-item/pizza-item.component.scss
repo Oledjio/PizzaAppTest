@@ -1,0 +1,21 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 24px 19px 14px 19px;
+    box-shadow: var(--primary-box-shadow);
+}
+
+.image-wrapper {
+    max-width: 150px;
+    height: 120px;
+}
+
+.primary-button {
+    width: 100%;
+    padding: 20px 48px;
+    margin-top: auto;
+}
+

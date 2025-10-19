@@ -1,0 +1,10 @@
+.primary-button {
+    background-color: var(--primary-color);
+    padding: 24px 48px;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: var(--primary-box-shadow);
+    }
+}
+

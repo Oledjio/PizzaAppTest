@@ -24,10 +24,18 @@
                         "assets": [
                             {
                                 "glob": "**/*",
+                                "input": "src/assets",
+                                "output": "assets"
+                            },
+                            {
+                                "glob": "**/*",
                                 "input": "public"
                             }
                         ],
-                        "styles": ["src/styles.scss"]
+                        "styles": ["src/styles.scss"],
+                        "stylePreprocessorOptions": {
+                            "includePaths": ["src/styles/base"]
+                        }
                     },
                     "configurations": {
                         "production": {

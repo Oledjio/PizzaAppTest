@@ -1,0 +1,13 @@
+@if (item(); as item) {
+    <div class="item">
+        <div class="image-wrapper">
+            <img class="image" [src]="item.image" />
+        </div>
+
+        <p class="header">{{ item.name }}</p>
+        <p class="sctucture">{{ structure() }}</p>
+
+        <button class="primary-button">В корзину</button>
+    </div>
+}
+

@@ -1,0 +1,10 @@
+<div class="container">
+    <h2 class="header">Выберите свою любимую пиццу</h2>
+
+    <div class="list">
+        @for (item of pizzas(); track $index) {
+            <app-pizza-item class="list-item" [item]="item"></app-pizza-item>
+        }
+    </div>
+</div>
+
