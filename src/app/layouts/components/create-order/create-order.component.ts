@@ -1,6 +1,8 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ConfirmationService } from 'primeng/api';
+import { delay, Observable, of } from 'rxjs';
 
 @Component({
     selector: 'app-create-order',
@@ -24,7 +26,10 @@ export class CreateOrderComponent implements OnInit {
         return this.form?.get('phone') as AbstractControl;
     }
 
-    constructor(private readonly _formBuilder: FormBuilder) {}
+    constructor(
+        private readonly _formBuilder: FormBuilder,
+        private readonly _confirmationService: ConfirmationService,
+    ) {}
 
     ngOnInit(): void {
         this.initForm();
@@ -36,7 +41,15 @@ export class CreateOrderComponent implements OnInit {
             return;
         }
 
-        console.log(this.form?.value);
+        this.sendOrder(this.form.value).subscribe(() => {
+            this._confirmationService.confirm({
+                rejectVisible: false,
+                header: 'Cпасибо за заказ',
+                acceptLabel: 'Закрыть',
+                closable: false,
+                accept: () => this.form?.reset(),
+            });
+        });
     }
 
     public blockDot(event: KeyboardEvent): void {
@@ -49,7 +62,11 @@ export class CreateOrderComponent implements OnInit {
         this.form = this._formBuilder.group({
             name: [null, Validators.required],
             address: [null, Validators.required],
-            phone: [null, Validators.required],
+            phone: [null, [Validators.required, Validators.pattern(/^[0-9]+$/)]],
         });
+    }
+
+    private sendOrder(body: any): Observable<any> {
+        return of({ body }).pipe(delay(1000));
     }
 }

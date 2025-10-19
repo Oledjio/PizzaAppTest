@@ -6,11 +6,24 @@
         </a>
 
         <ul class="menu">
-            <a class="menu-link" routerLink="/" routerLinkActive="active">Пицца</a>
-            <a class="menu-link" routerLink="/drinks" routerLinkActive="active">Напитки</a>
-            <a class="menu-link" routerLink="/delivery" routerLinkActive="active">Доставка и оплата</a>
-            <a class="menu-link" routerLink="/contacts" routerLinkActive="active">Контакты</a>
+            @for (item of menuItems; track $index) {
+                <a
+                    class="menu-link"
+                    routerLinkActive="active"
+                    [routerLink]="item.routerLink"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >{{ item.label }}</a
+                >
+            }
         </ul>
+
+        <div class="mobile-menu">
+            <div class="open-menu" (click)="menu.toggle($event)">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <p-menu #menu [model]="menuItems" [popup]="true" />
+        </div>
     </div>
 </header>
-

@@ -7,10 +7,27 @@
     gap: 16px;
     padding-top: 130px;
     padding-bottom: 160px;
+
+    @include tablet {
+        flex-direction: column;
+        padding: 60px 0;
+    }
 }
 
 .description-wrapper {
     width: 60%;
+
+    @include laptop {
+        width: 70%;
+    }
+
+    @include tablet {
+        width: 100%;
+    }
+}
+
+.image-wrapper {
+    flex-shrink: 4;
 }
 
 .header {
@@ -22,6 +39,16 @@
     .header-text {
         color: var(--primary-color);
     }
+
+    @include laptop {
+        width: 100%;
+    }
+
+    @include tablet {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
 }
 
 .list {
@@ -30,11 +57,21 @@
     margin-bottom: 60px;
     gap: 46px;
 
+    @include tablet {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
     .list-item {
         display: flex;
         align-items: center;
         gap: 4px;
         flex: 1 1 35%;
+
+        @include tablet {
+            flex: 1 1 auto;
+            justify-content: center;
+        }
     }
 
     .list-image {
@@ -54,6 +91,14 @@
 
     .list-text {
         color: var(--brown-500);
+    }
+}
+
+.primary-button {
+    @include tablet {
+        display: flex;
+        margin: 0 auto;
+        margin-bottom: 8px;
     }
 }
 

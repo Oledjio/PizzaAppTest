@@ -3,8 +3,26 @@
 
     <div class="list">
         @for (item of pizzas(); track $index) {
-            <app-pizza-item class="list-item" [item]="item"></app-pizza-item>
+            <app-pizza-item class="list-item" [item]="item" (onImageClick)="openImage($event)"></app-pizza-item>
         }
     </div>
 </div>
+
+@if (galleryVisible()) {
+    <p-galleria
+        [value]="images"
+        [visible]="galleryVisible()"
+        [containerStyle]="{ 'max-width': '70%' }"
+        [fullScreen]="true"
+        [showIndicators]="false"
+        [showThumbnailNavigators]="false"
+        (visibleChange)="onGalleryVisibleChange($event)"
+    >
+        <ng-template #item let-item>
+            <div class="gallery-image-wrapper">
+                <img class="gallery-image" [src]="item" />
+            </div>
+        </ng-template>
+    </p-galleria>
+}
 

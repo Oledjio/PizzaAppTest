@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, EventEmitter, input, Output } from '@angular/core';
 import { PizzaItemInterface } from '@core/models';
 
 @Component({
@@ -11,4 +11,10 @@ import { PizzaItemInterface } from '@core/models';
 export class PizzaItemComponent {
     item = input.required<PizzaItemInterface>();
     structure = computed(() => this.item().structure.join(', '));
+
+    @Output() onImageClick = new EventEmitter<string>();
+
+    openImage(url: string): void {
+        this.onImageClick.emit(url);
+    }
 }

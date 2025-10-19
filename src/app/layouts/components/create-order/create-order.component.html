@@ -58,6 +58,10 @@
                     @if (phoneControl.hasError('required')) {
                         <ng-container [ngTemplateOutlet]="error"></ng-container>
                     }
+
+                    @if (!phoneControl.hasError('required') && phoneControl.hasError('pattern')) {
+                        <p class="error">Поле может содержать только цифры</p>
+                    }
                 }
             </div>
 

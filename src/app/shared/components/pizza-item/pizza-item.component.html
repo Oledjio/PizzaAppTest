@@ -1,6 +1,6 @@
 @if (item(); as item) {
     <div class="item">
-        <div class="image-wrapper">
+        <div class="image-wrapper" (click)="openImage(item.image)">
             <img class="image" [src]="item.image" />
         </div>
 
