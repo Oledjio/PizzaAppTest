@@ -1,0 +1,1 @@
+import{Pb as a,_a as n,tb as o,ub as c}from"./chunk-FJFQIJCS.js";var s=class e{static \u0275fac=function(t){return new(t||e)};static \u0275cmp=n({type:e,selectors:[["app-contacts"]],decls:3,vars:0,consts:[[1,"container"]],template:function(t,p){t&1&&(o(0,"div",0)(1,"p"),a(2,"contacts works!"),c()())},encapsulation:2,changeDetection:0})};export{s as ContactsComponent};
