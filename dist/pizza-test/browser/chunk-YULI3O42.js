@@ -1,1 +1,0 @@
-import{Pb as r,_a as n,tb as o,ub as i}from"./chunk-FJFQIJCS.js";var a=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-delivery"]],decls:3,vars:0,consts:[[1,"container"]],template:function(e,c){e&1&&(o(0,"div",0)(1,"p"),r(2,"delivery works!"),i()())},encapsulation:2,changeDetection:0})};export{a as DeliveryComponent};

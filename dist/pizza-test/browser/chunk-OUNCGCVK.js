@@ -1,1 +1,0 @@
-import{Pb as s,_a as t,tb as o,ub as i}from"./chunk-FJFQIJCS.js";var r=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=t({type:n,selectors:[["app-drinks"]],decls:3,vars:0,consts:[[1,"container"]],template:function(e,c){e&1&&(o(0,"div",0)(1,"p"),s(2,"drinks works!"),i()())},encapsulation:2,changeDetection:0})};export{r as DrinksComponent};
