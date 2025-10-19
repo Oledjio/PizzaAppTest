@@ -34,9 +34,19 @@
     flex-direction: column;
     gap: 22px;
 
+    .input-wrapper {
+        width: 100%;
+    }
+
     .input {
         border: 1px solid var(--brown-400);
         padding: 24px;
+        width: 100%;
+        font-size: 14px;
+
+        &.ng-touched.ng-invalid {
+            border-color: var(--error-color);
+        }
 
         &::placeholder {
             color: var(--brown-300);
@@ -48,5 +58,10 @@
             box-shadow: var(--primary-box-shadow);
         }
     }
+}
+
+.error {
+    font-size: 13px;
+    color: var(--error-color);
 }
 
